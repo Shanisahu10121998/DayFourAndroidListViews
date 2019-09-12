@@ -27,14 +27,14 @@ public class CustomAdapter extends ArrayAdapter<CustomClass> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-
+// inflater to set background layout for another layout group etc.
         convertView = LayoutInflater.from(getContext()).inflate(R.layout.custom_list_item, parent, false);
 
 
         CustomClass item = getItem(position);
+//which positioin to set the item in list
 
-
-        TextView title = convertView.findViewById(R.id.title);
+        TextView title = convertView.findViewById(R.id.title);//all value of view group
         title.setText(item.getTitle());
 
 
@@ -49,6 +49,6 @@ public class CustomAdapter extends ArrayAdapter<CustomClass> {
         Animation animation = AnimationUtils.loadAnimation(getContext(), R.anim.custom_listview_animation);
         convertView.startAnimation(animation);
 
-        return convertView;
+        return convertView;//return all things in form of view
     }
 }
